@@ -1,8 +1,8 @@
-var seriesArray = ["Game of Thrones", "The Medici", "Borgia", "The Office", "Friends", "Narcos", "Mr. Robot", "House of Cards", "Downtown Abbey"];
+var seriesArray = ["Game of Thrones", "Borgia", "The Office", "Friends", "Narcos", "Mr. Robot", "House of Cards", "Downtown Abbey"];
 
-function alertSeriesName() {
+//function alertSeriesName() {
 
-}
+//}
 
 function addButtons () {
     $("#buttons").empty();
@@ -15,14 +15,7 @@ function addButtons () {
     }
 }
 
-$("#add-series").on("click", function(event) {
-    event.preventDefault();
-    var newSeries = $("#series-input").val().trim();
-    seriesArray.push(newSeries);
-    addButtons();
-});
-
-$(document).on("click", ".series", alertSeriesName);
+//$(document).on("click", ".series", alertSeriesName);
 
 addButtons();
 
@@ -42,7 +35,7 @@ $("button").on("click", function () {
                 var rating = results[i].rating;
                 var p = $("<p>").text(`Rating: ${rating}`);
                 var seriesImage = $("<img>");
-                seriesImage.attr("srs", results[i].images.still.url);
+                seriesImage.attr("src", results[i].images['480w_still'].url);
                 gifDiv.append(p);
                 gifDiv.append(seriesImage);
 
@@ -52,3 +45,11 @@ $("button").on("click", function () {
     
     })
 })
+
+$("#add-series").on("click", function(event) {
+    event.preventDefault();
+    var newSeries = $("#series-input").val().trim();
+    seriesArray.push(newSeries);
+    addButtons();
+    $("#series-input").val('');
+});
