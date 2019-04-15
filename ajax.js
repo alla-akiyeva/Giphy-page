@@ -1,9 +1,10 @@
-var seriesArray = ["Game of Thrones", "Borgia", "The Office", "Friends", "Narcos", "Mr. Robot", "House of Cards", "Downtown Abbey"];
+var seriesArray = ["Game of Thrones", "The Borgias", "The Office", "Friends", "Narcos", "Mr. Robot", "House of Cards", "Downtown Abbey", "Sherlock Holmes"];
 
 //function alertSeriesName() {
 
 //}
 
+// This function loops through the series array and creates buttons for each item.
 function addButtons () {
     $("#buttons").empty();
     for (var i = 0; i < seriesArray.length; i++) {
@@ -19,7 +20,8 @@ function addButtons () {
 
 addButtons();
 
-$("button").on("click", function () {
+// On-click listener for buttons triggers ajax query to GIPHY API and populates the page with images. 
+$(document).on("click", ".series", function () {
     var series = $(this).attr("data-series");
     var queryURL = `https://api.giphy.com/v1/gifs/search?q=${series}&api_key=97ebs16m5vS9zuQHeeA1HUmZQdigPkwi&limit=10`;
     $.ajax({
@@ -46,6 +48,7 @@ $("button").on("click", function () {
     })
 })
 
+// This function adds a new button to the page when User enters text (series name) and hits "Add".
 $("#add-series").on("click", function(event) {
     event.preventDefault();
     var newSeries = $("#series-input").val().trim();
