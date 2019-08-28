@@ -33,15 +33,18 @@ $(document).on("click", ".series", function () {
         console.log(response);
         for (var i = 0; i < results.length; i++) {
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-                var gifDiv = $("<div>");
-                var rating = results[i].rating;
-                var p = $("<p>").text(`Rating: ${rating}`);
+                // var gifDiv = $("<div class='image'>");
+                // var rating = results[i].rating;
+                // var p = $("<p>").text(`Rating: ${rating}`);
                 var seriesImage = $("<img>");
                 seriesImage.attr("src", results[i].images['480w_still'].url);
-                gifDiv.append(p);
-                gifDiv.append(seriesImage);
+                // gifDiv.append(p);
+                // gifDiv.append(seriesImage);
 
-                $("#div-for-gifs").prepend(gifDiv);
+                // $("#div-for-gifs").prepend(gifDiv);
+
+                // trying something out here
+                $("#div-for-gifs").prepend(seriesImage);
             }
         }
     
