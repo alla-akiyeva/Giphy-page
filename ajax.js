@@ -41,6 +41,9 @@ $(document).on("click", ".series", function () {
                 // var p = $("<p>").text(`Rating: ${rating}`);
                 var seriesImage = $("<img>");
                 seriesImage.attr("src", results[i].images['480w_still'].url);
+                seriesImage.attr("data-still", results[i].images['480w_still'].url);
+                seriesImage.attr("data-animate", results[i].images['fixed_height'].url);
+
                 // gifDiv.append(p);
                 // gifDiv.append(seriesImage);
                 // $("#div-for-gifs").prepend(gifDiv);  
@@ -50,10 +53,23 @@ $(document).on("click", ".series", function () {
                 $("#div-for-gifs").prepend(seriesImage);
             }
         }
-
         offset = offset + 10;
-    
     })
+})
+
+$(document).on("click", "img", function() {
+  var src = $(this).attr("src");
+  var still = $(this).attr("data-still");
+  var animate = $(this).attr("data-animate");
+  if (src == still) {
+    $(this).attr("src", animate);
+  } else {
+    $(this).attr("src", still);
+  }
+})
+
+$("#clear").on("click", function () {
+    $("#div-for-gifs").empty();
 })
 
 // This function adds a new button to the page when User enters text (series name) and hits "Add".
