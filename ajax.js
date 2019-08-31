@@ -20,10 +20,13 @@ function addButtons () {
 
 addButtons();
 
+let offset = 0;
+
 // On-click listener for buttons triggers ajax query to GIPHY API and populates the page with images. 
 $(document).on("click", ".series", function () {
     var series = $(this).attr("data-series");
-    var queryURL = `https://api.giphy.com/v1/gifs/search?q=${series}&api_key=97ebs16m5vS9zuQHeeA1HUmZQdigPkwi&limit=10`;
+    
+    var queryURL = `https://api.giphy.com/v1/gifs/search?q=${series}&api_key=97ebs16m5vS9zuQHeeA1HUmZQdigPkwi&limit=10&offset=${offset}`;
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -40,13 +43,15 @@ $(document).on("click", ".series", function () {
                 seriesImage.attr("src", results[i].images['480w_still'].url);
                 // gifDiv.append(p);
                 // gifDiv.append(seriesImage);
+                // $("#div-for-gifs").prepend(gifDiv);  
 
-                // $("#div-for-gifs").prepend(gifDiv);
+                // -- Commented out the appending of a "rating" <p> to simplify the image element for styling purposes. 
 
-                // trying something out here
                 $("#div-for-gifs").prepend(seriesImage);
             }
         }
+
+        offset = offset + 10;
     
     })
 })
