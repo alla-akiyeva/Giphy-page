@@ -51,15 +51,6 @@ label {
     cursor: pointer;
 }
 
-/* .image {
-    float: left;
-    width: 30%;
-    position: relative;
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-} */
-
 img {
     padding: 5px;
     height: 200px;

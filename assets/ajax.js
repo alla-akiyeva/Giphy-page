@@ -1,9 +1,5 @@
 var seriesArray = ["Game of Thrones", "The Borgias", "The Office", "Friends", "Narcos", "Mr. Robot", "House of Cards", "Downtown Abbey", "Sherlock Holmes"];
 
-//function alertSeriesName() {
-
-//}
-
 // This function loops through the series array and creates buttons for each item.
 function addButtons () {
     $("#buttons").empty();
@@ -15,8 +11,6 @@ function addButtons () {
         $("#buttons").append(a);
     }
 }
-
-//$(document).on("click", ".series", alertSeriesName);
 
 addButtons();
 
