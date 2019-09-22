@@ -1,6 +1,6 @@
 # Giphy-page
 
-https://alla-akiyeva.github.io/Giphy-page/
+Deployed version:  https://alla-akiyeva.github.io/Giphy-page/
 
 The app demonstrates the use of AJAX for dynamic loading of content from an API. 
 
@@ -11,3 +11,11 @@ The API offset is updated with each click, so new GIFs can be loaded each time t
 
 ### Built With
 HTML, CSS, JavaScript, jQuery, GIPHY API
+
+Click on one of the displayed buttons or add your own button to load GIFs. 
+
+![Main Page](/assets/img/mainpageGiphy.png)
+
+Click on a GIF to animate it.
+
+![GIFs loaded](/assets/img/GIFSgiphy.png)
