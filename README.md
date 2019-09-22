@@ -14,6 +14,8 @@ HTML, CSS, JavaScript, jQuery, GIPHY API
 
 Click on one of the displayed buttons or add your own button to load GIFs. 
 
+______________________________________________
+
 ![Main Page](/assets/img/mainpageGiphy.png)
 
 Click on a GIF to animate it.
